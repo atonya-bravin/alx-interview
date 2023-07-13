@@ -15,7 +15,10 @@ def minOperations(n: int) -> int:
     operations needed to result in exactly n H characters.
     """
 
-    if n % 3 == 0:
+    if n == 2 or n == 3:
+        return n
+
+    elif n % 3 == 0:
         return 3 + int((n / 3))
 
     elif n % 2 == 0:
