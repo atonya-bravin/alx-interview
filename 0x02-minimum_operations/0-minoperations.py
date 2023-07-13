@@ -21,5 +21,8 @@ def minOperations(n: int) -> int:
     elif n % 2 == 0:
         return 2 + int((n / 2))
 
-    else:
+    elif n < 3:
         return 0
+
+    else:
+        return n
