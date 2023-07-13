@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 This a module that contains a solution to an interview question.
 The question requires that we write a method that calculates the
