@@ -4,6 +4,7 @@ This module contains a function that is used
 to validate UTF-8 characters
 """
 
+
 def validUTF8(data) -> bool:
     """
     Function that takes in a data set
