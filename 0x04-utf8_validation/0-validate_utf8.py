@@ -1,7 +1,22 @@
+#!/usr/bin/python3
+"""
+This module contains a function that is used
+to validate UTF-8 characters
+"""
+
 def validUTF8(data) -> bool:
+    """
+    Function that takes in a data set
+    then validates UTF-8 characters
+    """
     index = 0
 
     def check_valid(start_index, num_bytes):
+        """
+        Helper function to check the validity of
+        the characters
+        """
+
         return all(start_index < len(data) and (data[start_index] >> 6) == 0b10
                    for start_index
                    in range(start_index, start_index + num_bytes))
