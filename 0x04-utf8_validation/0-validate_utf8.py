@@ -17,10 +17,11 @@ def validUTF8(data) -> bool:
         Helper function to check the validity of
         the characters
         """
-
-        return all(start_index < len(data) and (data[start_index] >> 6) == 0b10
-                   for start_index
-                   in range(start_index, start_index + num_bytes))
+        return all(
+                start_index + i < len(data)
+                and (data[start_index + i] >> 6) == 0b10
+                for i
+                in range(num_bytes))
 
     while index < len(data):
         if data[index] >> 7 == 0:  # Check for 1-byte character (0xxxxxxx)
