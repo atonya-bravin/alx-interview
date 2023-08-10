@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-//import the request module
+// import the request module
 const request = require('request');
 
 const filmNum = process.argv[2] + '/';
