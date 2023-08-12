@@ -1,34 +1,28 @@
 #!/usr/bin/python3
 """
-This a module that contains a solution to an interview question.
-The question requires that we write a method that calculates the
-fewest number of operations needed to result in exactly n H characters
-in a file that accepts only two operations.
-- CopyAll
-- Paste
+Given a number n, write a method that calculates the
+fewest number of operations needed to result in exactly
+n H characters in the file.
 """
 
 
-def minOperations(n: int) -> int:
+def minOperations(n):
     """
-    This function takes in an integer and calculates the number of
-    operations needed to result in exactly n H characters.
+    Returns a list of lists of integers
+    representing the Pascal’s triangle of n.
     """
+    result = 0
+    i = 2
 
-    if type(n) != int:
+    if isinstance(n, int) and n < 2:
         return 0
 
-    if n == 2 or n == 3:
-        return n
+    while i <= n + 1:
+        if n % i == 0:
+            result += i
+            n //= i
+            i = 2
+        else:
+            i += 1
 
-    elif n % 3 == 0:
-        return 3 + int((n / 3))
-
-    elif n % 2 == 0:
-        return 2 + int((n / 2))
-
-    elif n < 2:
-        return 0
-
-    else:
-        return n
+    return result
