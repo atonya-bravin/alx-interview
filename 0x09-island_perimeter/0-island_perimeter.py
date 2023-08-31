@@ -6,7 +6,7 @@ def island_perimeter(grid):
     """ 
 	This is a method that takes in a grid and calculates
 	the perimeter and returns it
-"""
+    """
     total_perimeter = 0
 
     for i, row in enumerate(grid):
